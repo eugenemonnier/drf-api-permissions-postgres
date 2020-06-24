@@ -3,19 +3,33 @@
 ## Features
 ### General
 
-- Rebuild a custom version of `Blog API` demo project from scratch.
-    - Replace `Blog` and `Post` with your own application and model.
-    - Your model must have at least as many fields as demo’s model.
-    - Your model must have one field that is a foreign key to user.
-    - **NOTE**: You are not required to build any templates for this lab.
+- You have been supplied with two demos, each presenting a key new feature.
+  - `blogapi-permissions` demonstrates how to restrict access to portions of your APIs data.
+  - `blogapi-postgres` demonstrates switching over to using `postgres` vs `sqlite`
+- Your job is to merge the functionality of both demos.
+- Customize your project to use different application features/models than `Blog` and `Post`
 
+### Django REST Framework
+
+- Make your site a DRF powered API as you did in previous lab.
+- Adjust project’s permissions so that only authenticated user’s have access to API.
+- Add a custom permission so that only author of blog post can update or delete it.
+- Add ability to switch user’s directly from browsable API.
 
 ### Docker
 
-- **NOTE** Refer to the class demo for built out `Dockerfile` and `docker-compose.yml` examples.
-- Update `Dockerfile` and `docker-compose.yml` if needed.
+- **NOTE** Refer to demo for built out `Dockerfile` and `docker-compose.yml` examples.
+- create `Dockerfile` based off `python:3.8-slim`
+- create `docker-compose.yml` to run Django app as a `web` service.
+- enter `docker-compose up --build` to start your site.
+- add `postgres 11` as a service
+  - Note: It is not required to include a volume so that data can persist when container is shut down.
+- Go to browsable api and confirm site properly restricts users based on their permissions.
+
+## Stretch Goal
+- Add a `volume` to persist data when container is shut down.
 
 
 # Pull Request
-[PR #1](https://github.com/eugenemonnier/django-rest-api/pull/1)
-[PR #2](https://github.com/eugenemonnier/django-rest-api/pull/2)
+[PR #1: Postgres](https://github.com/eugenemonnier/drf-api-permissions-postgres/pull/1)
+[PR #2: Permissions](https://github.com/eugenemonnier/drf-api-permissions-postgres/pull/2)
